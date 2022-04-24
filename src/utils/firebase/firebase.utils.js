@@ -1,6 +1,13 @@
 import { initializeApp } from 'firebase/app';
 
-import { getAuth, GoogleAuthProvider, signInWithRedirect, signInWithPopup  } from 'firebase/auth';
+import { 
+    getAuth, 
+    GoogleAuthProvider, 
+    signInWithRedirect, 
+    signInWithPopup, 
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword
+} from 'firebase/auth';
 
 import {
     getFirestore,
@@ -21,17 +28,18 @@ const firebaseConfig = {
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
 
-  const provider = new GoogleAuthProvider();
-  provider.setCustomParameters({
+  const googleProvider = new GoogleAuthProvider();
+  googleProvider.setCustomParameters({
     prompt: "select_account"
   });
 
   export const auth = getAuth();
-  export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+  export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+  export const signInWithGoogleRedirect = () => signInWithRedirect(auth, googleProvider);
 
   export const db = getFirestore();
 
-  export const createUserDocumentFromAuth = async (userAuth) => {
+  export const createUserDocumentFromAuth = async (userAuth, additionalInformation = {}) => {
     const userDocRef = doc(db, 'users', userAuth.uid);
 
     console.log(userDocRef);
@@ -46,7 +54,8 @@ const firebaseConfig = {
             await setDoc(userDocRef, {
                 displayName,
                 email,
-                createdAt
+                createdAt,
+                ...additionalInformation
             });
         }
         catch(error) {
@@ -57,3 +66,17 @@ const firebaseConfig = {
 
     return userDocRef;
   }
+
+  export const createAuthUserWithEmailAndPassword = async (email, password) => {
+
+      if(!email || !password ) return;
+
+      return await createUserWithEmailAndPassword(auth, email, password);
+  }
+
+  export const signInAuthUserWithEmailAndPassword = async (email, password) => {
+
+    if(!email || !password ) return;
+
+    return await signInWithEmailAndPassword(auth, email, password);
+}
