@@ -20,7 +20,7 @@ const ProductCard = ({ product }) => {
             </div>
             <Button buttonType='inverted' onClick={addProductToCart}>Add to cart</Button>
         </div>
-    )
+    );
 };
 
 export default ProductCard;
