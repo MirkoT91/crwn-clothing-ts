@@ -1,13 +1,20 @@
-import SignUpForm from '../../components/sign-up-form/sign-up-form.component';
+import { useNavigate } from 'react-router-dom';
 import SignInForm from '../../components/sign-in-form/sign-in-form.component';
 
-import { AuthenticationContainer } from './authentication.styles';
+import { AlreadyAccount, AuthenticationContainer } from './authentication.styles';
 
 const Authentication = () => {
+
+  const navigate = useNavigate();
+
+  const goToSignUpForm = () => {
+    navigate('/sign-up-form');
+  }
+
   return (
     <AuthenticationContainer>
       <SignInForm />
-      <SignUpForm />
+      <AlreadyAccount onClick={goToSignUpForm}>Don't have an account?</AlreadyAccount>
     </AuthenticationContainer>
   );
 };
