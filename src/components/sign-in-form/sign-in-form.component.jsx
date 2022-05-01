@@ -3,7 +3,7 @@ import { signInAuthUserWithEmailAndPassword, signInWithGooglePopup, createUserDo
 
 import FormInput from "../form-input/form-input.component";
 
-import './sign-in-form.styles.scss';
+import './sign-in-form.styles.jsx';
 import Button  from "../button/button.component";
 
 
