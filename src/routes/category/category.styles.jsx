@@ -4,8 +4,8 @@ const size = {
   mobileS: '320px',
   mobileM: '375px',
   mobileL: '425px',
-  tablet: '650px',
-  laptop: '800px',
+  tablet: '800px',
+  laptop: '1000px',
   laptopL: '1440px',
   desktop: '2560px'
 }
@@ -29,6 +29,7 @@ export const CategoryContainer = styled.div`
   }
 
   @media ${device.tablet} {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
   row-gap: 50px;
@@ -36,7 +37,7 @@ export const CategoryContainer = styled.div`
 
   @media ${device.laptop} {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 20px;
     row-gap: 50px;
   }
