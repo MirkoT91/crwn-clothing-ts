@@ -22,6 +22,13 @@ export const device = {
 };
 
 export const CategoryContainer = styled.div`
+  @media ${device.mobileS} {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+  }
+
   @media ${device.mobileL} {
     display: flex;
     flex-direction: column;
