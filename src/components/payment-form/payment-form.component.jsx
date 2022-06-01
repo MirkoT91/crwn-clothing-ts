@@ -39,10 +39,13 @@ const PaymentForm = () => {
       payment_method: {
         card: elements.getElement(CardElement),
         billing_details: {
-          name: 'Mirko Tomasina'
+          name: currentUser ? currentUser.displayName: 'Guest',
         }
       }
     });
+
+    setIsProcessingPayment(false);
+
     if(paymentResult.error) {
       alert(paymentResult.error)
     } else {
