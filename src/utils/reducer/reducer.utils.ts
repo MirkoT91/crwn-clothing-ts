@@ -1,5 +1,17 @@
 import { AnyAction } from 'redux';
 
+type Alien = {
+    fly: () => {};
+}
+
+type Human = {
+    speak: () => {}
+}
+
+function isHuman(entity: Human | Alien): entity is Human {
+    return (entity as Human).speak !== undefined;
+}
+
 export type ActionWithPayload<T, P> = {
     type: T;
     payload?: P;
