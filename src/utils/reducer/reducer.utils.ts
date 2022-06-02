@@ -1,15 +1,16 @@
 import { AnyAction } from 'redux';
 
-type Alien = {
-    fly: () => {};
+type Matchable<AC extends () => AnyAction> = AC & {
+    type: ReturnType<AC>['type'];
+    match(action: AnyAction): action is ReturnType<AC>
 }
 
-type Human = {
-    speak: () => {}
-}
+export function withMatcher<AC extends () => AnyAction & { type: string }>(actionCreator: AC): Matchable<AC>
 
-function isHuman(entity: Human | Alien): entity is Human {
-    return (entity as Human).speak !== undefined;
+export function withMatcher<AC extends (...args: any[]) => AnyAction & { type: string }>(actionCreator: AC): Matchable<AC>
+
+export function withMatcher(actionCreator: Function) {
+    const type = actionCreator().type;
 }
 
 export type ActionWithPayload<T, P> = {
