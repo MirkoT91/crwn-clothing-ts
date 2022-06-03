@@ -18,7 +18,6 @@ export const categoriesReducer = (
     state = CATEGORIES_INITIAL_STATE, 
     action = {} as CategoryAction
     ):CategoriesState => {
-
     if(fetchCategoriesStart.match(action)) {
         return { ...state, isLoading: true};
     }
