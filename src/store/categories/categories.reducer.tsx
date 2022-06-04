@@ -1,5 +1,7 @@
-import { CATEGORIES_ACTION_TYPES, Category } from "./categories.types";
-import { CategoryAction, fetchCategoriesFailure, fetchCategoriesStart, fetchCategoriesSuccess} from "./categories.action";
+// @ts-ignore
+import { CATEGORIES_ACTION_TYPES, Category } from "./categories.types.tsx";
+// @ts-ignore
+import { CategoryAction, fetchCategoriesFailure, fetchCategoriesStart, fetchCategoriesSuccess} from "./categories.action.tsx";
 import { AnyAction } from "redux";
 
 export type CategoriesState = {

@@ -1,5 +1,7 @@
-import { CART_ACTION_TYPES, CartItem } from "./cart.types";
-import { setCartItems, SetCartItems, setIsCartOpen, SetIsCartOpen } from "./cart.action";
+// @ts-ignore
+import { CartItem } from "./cart.types.tsx";
+// @ts-ignore
+import { setCartItems, setIsCartOpen } from "./cart.action.tsx";
 import { AnyAction } from "redux";
 
 
@@ -15,8 +17,8 @@ export const  CART_INITIAL_STATE: CartState = {
   
   export const cartReducer = (
     state= CART_INITIAL_STATE,  
-    action : AnyAction
-    ): CartState => {
+    action = {} as AnyAction
+    ) => {
 
       if(setIsCartOpen.match(action)) {
         return {
@@ -31,5 +33,7 @@ export const  CART_INITIAL_STATE: CartState = {
           cartItems: action.payload,
         };
       }
+
+      return state;
    
   };

@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
-import { selectCartItems } from '../../store/cart/cart.selector';
-import { clearItemFromCart, addItemToCart, removeItemFromCart } from '../../store/cart/cart.action';
+import { selectCartItems } from '../../store/cart/cart.selector.tsx';
+import { clearItemFromCart, addItemToCart, removeItemFromCart } from '../../store/cart/cart.action.tsx';
 
 import {
   CheckoutItemContainer,

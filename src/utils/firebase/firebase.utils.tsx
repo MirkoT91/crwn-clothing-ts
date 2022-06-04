@@ -23,6 +23,11 @@ import {
   QueryDocumentSnapshot
 } from 'firebase/firestore';
 
+// @ts-ignore
+
+import { Category } from '../../store/categories/categories.types.tsx'
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyBikyC-KzmvXUCnfjicXJ0Es_fn719ZfcQ",
   authDomain: "crwn-clothing-db-bc1e2.firebaseapp.com",
@@ -32,7 +37,6 @@ const firebaseConfig = {
   appId: "1:679208890379:web:8de0804d9ba93f280e970e"
 };
 
-import { Category } from '../../store/categories/categories.types'
 
 const firebaseApp = initializeApp(firebaseConfig);
 

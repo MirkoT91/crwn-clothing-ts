@@ -1,5 +1,7 @@
-import { USER_ACTION_TYPES } from './user.types';
-import { Action, ActionWithPayload, createAction, withMatcher } from '../../utils/reducer/reducer.utils';
+// @ts-ignore
+import { USER_ACTION_TYPES } from './user.types.tsx';
+// @ts-ignore
+import { Action, ActionWithPayload, createAction, withMatcher } from '../../utils/reducer/reducer.utils.tsx';
 import { UserData, AdditionalInformation } from '../../utils/firebase/firebase.utils';
 import { User } from 'firebase/auth';
 
