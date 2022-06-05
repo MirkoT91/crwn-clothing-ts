@@ -23,7 +23,7 @@ export const fetchCategoriesSuccess = withMatcher((
     categoriesArray
   ));
 
-export const fetchCategoriesFailure = withMatcher((
+export const fetchCategoriesFailed= withMatcher((
   error: Error
   ):FetchCategoriesFailed =>
   createAction(CATEGORIES_ACTION_TYPES.FETCH_CATEGORIES_FAILED, error));

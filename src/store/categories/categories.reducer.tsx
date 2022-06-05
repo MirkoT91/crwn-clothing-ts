@@ -1,7 +1,7 @@
 // @ts-ignore
 import { CATEGORIES_ACTION_TYPES, Category } from "./categories.types.tsx";
 // @ts-ignore
-import { CategoryAction, fetchCategoriesFailure, fetchCategoriesStart, fetchCategoriesSuccess} from "./categories.action.tsx";
+import { CategoryAction, fetchCategoriesFailed, fetchCategoriesStart, fetchCategoriesSuccess} from "./categories.action.tsx";
 import { AnyAction } from "redux";
 
 export type CategoriesState = {
@@ -28,7 +28,7 @@ export const categoriesReducer = (
         return { ...state, categories: action.payload, isLoading: false};
     }
 
-    if(fetchCategoriesFailure.match(action)) {
+    if(fetchCategoriesFailed.match(action)) {
         return { ...state, error: action.payload, isLoading: false};
     }
 
