@@ -19,15 +19,15 @@ export type SignInFailed = ActionWithPayload<USER_ACTION_TYPES.SIGN_IN_SUCCESS, 
 
 export type SignUpStart = ActionWithPayload<USER_ACTION_TYPES.SIGN_UP_START, { email: string, password: string, displayName: string }>;
 
-export type signUpSuccess = ActionWithPayload<USER_ACTION_TYPES.SIGN_UP_SUCCESS, { user: User, additionalDetails: AdditionalInformation}>;
+export type SignUpSuccess = ActionWithPayload<USER_ACTION_TYPES.SIGN_UP_SUCCESS, { user: User, additionalDetails: AdditionalInformation}>;
 
-export type signUpFailed = ActionWithPayload<USER_ACTION_TYPES.SIGN_UP_FAILED, { error: Error}>;
+export type SignUpFailed = ActionWithPayload<USER_ACTION_TYPES.SIGN_UP_FAILED, { error: Error}>;
 
-export type signOutStart = Action<USER_ACTION_TYPES.SIGN_OUT_START>;
+export type SignOutStart = Action<USER_ACTION_TYPES.SIGN_OUT_START>;
 
-export type signOutSuccess = Action<USER_ACTION_TYPES.SIGN_OUT_SUCCESS>;
+export type SignOutSuccess = Action<USER_ACTION_TYPES.SIGN_OUT_SUCCESS>;
 
-export type signOutFailed = ActionWithPayload<USER_ACTION_TYPES.SIGN_OUT_START, { error: Error }>;
+export type SignOutFailed = ActionWithPayload<USER_ACTION_TYPES.SIGN_OUT_START, { error: Error }>;
 
 export const checkUserSession = withMatcher(():CheckUserSession =>
   createAction(USER_ACTION_TYPES.CHECK_USER_SESSION));
@@ -47,7 +47,7 @@ export const emailSignInStart = withMatcher(
   createAction(USER_ACTION_TYPES.EMAIL_SIGN_IN_START, { email, password }));
 
 export const signInSuccess = withMatcher(
-  (user:UserData) =>
+  (user:UserData & { id: string }): SignInSuccess =>
   createAction(USER_ACTION_TYPES.SIGN_IN_SUCCESS, user));
 
 export const signInFailed = withMatcher(

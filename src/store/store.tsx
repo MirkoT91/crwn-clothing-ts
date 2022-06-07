@@ -4,8 +4,8 @@ import storage from 'redux-persist/lib/storage';
 //@ts-ignore
 import logger from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
-
-import { rootSaga } from './root-saga';
+// @ts-ignore
+import { rootSaga } from './root-saga.tsx';
 
 import { rootReducer } from './root-reducer';
 
