@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
-import Button, {BUTTON_TYPE_CLASSES} from '../button/button.component';
+import Button, {BUTTON_TYPE_CLASSES} from '../button/button.component.tsx';
 import CartItem from '../cart-item/cart-item.component';
 import { selectCartItems } from '../../store/cart/cart.selector.tsx';
 import {

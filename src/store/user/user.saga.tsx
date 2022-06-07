@@ -39,6 +39,7 @@ export function* getSnapshotFromUserAuth(
     );
     if (userSnapshot) {
       yield* put(
+        // @ts-ignore
         signInSuccess({ id: userSnapshot.id, ...userSnapshot.data() })
       );
     }
@@ -49,6 +50,7 @@ export function* getSnapshotFromUserAuth(
 
 export function* signInWithGoogle() {
   try {
+    // @ts-ignore
     const { user } = yield* call(signInWithGooglePopup);
     yield* call(getSnapshotFromUserAuth, user);
   } catch (error) {
@@ -67,6 +69,7 @@ export function* signInWithEmail({
     );
 
     if (data) {
+      // @ts-ignore
       const { user } = data;
       yield* call(getSnapshotFromUserAuth, user);
     }
@@ -79,6 +82,7 @@ export function* isUserAuthenticated() {
   try {
     const userAuth = yield* call(getCurrentUser);
     if (!userAuth) return;
+    // @ts-ignore
     yield* call(getSnapshotFromUserAuth, userAuth);
   } catch (error) {
     yield* put(signInFailed(error as Error));
@@ -96,6 +100,7 @@ export function* signUp({
     );
 
     if (data) {
+      // @ts-ignore
       const { user } = data;
       yield* put(signUpSuccess(user, { displayName }));
     }

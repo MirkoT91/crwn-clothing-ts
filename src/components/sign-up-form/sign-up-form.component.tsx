@@ -1,11 +1,13 @@
 import { useState } from 'react';
 
 import { useDispatch } from 'react-redux';
-
-import FormInput from '../../components/form-input/form-input.component';
-import Button from '../../components/button/button.component';
-
-import { SignUpContainer } from './sign-up-form.styles';
+// @ts-ignore
+import FormInput from '../../components/form-input/form-input.component.tsx';
+// @ts-ignore
+import Button from '../../components/button/button.component.tsx';
+// @ts-ignore
+import { SignUpContainer } from './sign-up-form.styles.tsx';
+// @ts-ignore
 import { signUpStart } from '../../store/user/user.action.tsx';
 
 const defaultFormFields = {

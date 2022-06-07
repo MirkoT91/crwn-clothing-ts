@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const AuthenticationContainer = styled.div`
   display: flex;
   width: 60vw;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   margin: 30px auto;
 

@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { selectCartItems } from '../../store/cart/cart.selector.tsx';
 import { addItemToCart } from '../../store/cart/cart.action.tsx';
 
-import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component';
+import Button, { BUTTON_TYPE_CLASSES } from '../button/button.component.tsx';
 
 import {
   ProductCartContainer,
