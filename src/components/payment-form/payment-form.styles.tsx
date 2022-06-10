@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// @ts-ignore
 import Button from '../button/button.component.tsx';
 
 export const PaymentFormContainer = styled.div`

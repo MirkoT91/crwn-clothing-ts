@@ -1,11 +1,12 @@
 import { ReactComponent as ShoppingIcon } from '../../assets/shopping-bag.svg';
 
 import { useDispatch, useSelector } from 'react-redux';
-
+// @ts-ignore
 import { selectCartCount, selectIsCartOpen} from '../../store/cart/cart.selector.tsx';
+// @ts-ignore
 import { setIsCartOpen } from '../../store/cart/cart.action.tsx';
-
-import { CartIconContainer, ItemCount } from './cart-icon.styles';
+// @ts-ignore
+import { CartIconContainer, ItemCount } from './cart-icon.styles.tsx';
 
 const CartIcon = () => {
 
